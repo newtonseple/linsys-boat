@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{parskip} %skip the indent of a new paragraph.
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage[super]{nth}
+\lstset{language=Matlab, frame=single, breaklines=true,numbers=left, keywordstyle=\color{blue},rulecolor=\color{black},commentstyle=\color{gray}}
+
+\usepackage{cleveref}
+\usepackage{todonotes}
+
+%% Brukes for tabeller (av likninger)
+\usepackage{tabularx}
+\def\tabularxcolumn#1{m{#1}}
+
+\newcommand{\TODO}[1]{\todo[inline]{#1}}
+\newcommand{\mbf}[1]{\mathbf{#1}} % Arg 1 is bold (in math environment)
+\newcommand{\partialderiv}[2]{\frac{\partial{#1}}{\partial{#2}}} % prints partial derivative as a fraction
+
+\title{Linear Systems TTK4115 - Boat Lab Report}
+\author{Bern Johan Damslora -- 759477 \\ Didrik rokhaug -- 759528}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+    %\maketitle
+    %\rule{\linewidth}{0.5mm}
+    \begin{center}
+    	\large
+    	Linear Systems TTK4115
+    \end{center}
+    \vspace{\fill}
+    \rule{\linewidth}{0.5mm}
+    \begin{center}
+    	\huge
+    	Boat Lab Report
+    \end{center}
+	\rule{\linewidth}{0.5mm}
+	\vspace{\fill}
+
+	%\begin{center}
+    %	\huge
+    %	Bern Johan Damslora -- 759477 \\ Didrik rokhaug -- 759528
+    %\end{center}
+    \begin{table}[H]
+    	\centering
+    	\large
+    	\begin{tabular}{rl}
+    		\textbf{Bernt Johan Damslora} & (nr. 759477) \\
+    		\textbf{Didrik Rokhaug} &  (nr. 759528)
+    	
+    	\end{tabular}
+    \end{table}
+    \vspace{\fill}
+    \begin{center}
+    	\large
+    	\today
+    \end{center}
+	\vspace{\fill}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/logontnu_eng}
+    \end{figure}
+    \thispagestyle{empty}
+\end{titlepage}
+
+%\section*{Table of contents} 
+\tableofcontents
+\thispagestyle{empty} %Avoid page numbering on the table of contents
+\newpage
+
+\setcounter{page}{1}
+% Part 1
+% Osv.
+
+%uncomment to add reference list
+%\newpage
+%\input{reference}
+
+\end{document}
