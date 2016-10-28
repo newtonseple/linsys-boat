@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [8.0, 76.0, 1375.0, 919.0]
+      Location		      [-6.0, -6.0, 1381.0, 885.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -53,9 +53,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[2658.0, 1524.0]
+	Extents			[2670.0, 1456.0]
 	ZoomFactor		[1.4414937416599531]
-	Offset			[101.13567926337436, -38.837706987780223]
+	Offset			[101.13567926337424, -38.837706987780052]
       }
     }
   }
@@ -66,7 +66,7 @@ Model {
   LastModifiedBy	  "Bernt Johan"
   ModifiedDateFormat	  "%<Auto>"
   LastModifiedDate	  "Fri Oct 28 16:01:35 2016"
-  RTWModifiedTimeStamp	  399571295
+  RTWModifiedTimeStamp	  399574067
   ModelVersionFormat	  "1.%<AutoIncrement:19>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
@@ -161,7 +161,7 @@ Model {
 	  $ObjectID		  8
 	  Version		  "1.15.1"
 	  StartTime		  "0.0"
-	  StopTime		  "1000"
+	  StopTime		  "5000"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -929,10 +929,18 @@ Model {
       NumInputs		      "1"
       SampleTime	      "0"
     }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+      Realization	      "auto"
+    }
   }
   System {
     Name		    "ship"
-    Location		    [8, 76, 1383, 995]
+    Location		    [-6, -6, 1375, 879]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -946,7 +954,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "144"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "34"
+    SIDHighWatermark	    "40"
     Block {
       BlockType		      SubSystem
       Name		      "Cargo ship"
@@ -973,7 +981,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "noise"
 	    Prompt		    "measurement noise"
-	    Value		    "off"
+	    Value		    "on"
 	  }
 	  Object {
 	    $ObjectID		    22
@@ -987,7 +995,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "logic"
 	    Prompt		    "waves"
-	    Value		    "off"
+	    Value		    "on"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -1497,7 +1505,7 @@ Model {
       Name		      "North-East"
       SID		      "29"
       Ports		      [2]
-      Position		      [505, 198, 535, 242]
+      Position		      [555, 198, 585, 242]
       ZOrder		      -2
       LibraryVersion	      "1.358"
       SourceBlock	      "simulink/Sinks/XY Graph"
@@ -1520,14 +1528,14 @@ Model {
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
       "LoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'Serial"
-      "izedDisplays',{struct('MinYLimReal','384.94106','MaxYLimReal','962.95044','YLabelReal','','MinYLimMag','384.9410"
-      "6','MaxYLimMag','962.95044','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',"
+      "izedDisplays',{struct('MinYLimReal','384.97575','MaxYLimReal','962.63825','YLabelReal','','MinYLimMag','384.9757"
+      "5','MaxYLimMag','962.63825','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',"
       "[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666666"
       "6667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83137254901"
       "9608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6509"
       "80392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'Li"
       "neNames',{{'Cargo ship/1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','3"
-      "84.94106','MaxYLimReal','962.95044','YLabelReal','','MinYLimMag','384.94106','MaxYLimMag','962.95044','LegendVis"
+      "84.97575','MaxYLimReal','962.63825','YLabelReal','','MinYLimMag','384.97575','MaxYLimMag','962.63825','LegendVis"
       "ibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450980"
       "3922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764"
       "706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823"
@@ -1539,9 +1547,9 @@ Model {
     Block {
       BlockType		      Step
       Name		      "Step"
-      SID		      "34"
-      Position		      [200, 195, 230, 225]
-      ZOrder		      4
+      SID		      "40"
+      Position		      [185, 195, 215, 225]
+      ZOrder		      10
       Time		      "0"
       SampleTime	      "0"
     }
@@ -1554,11 +1562,33 @@ Model {
       ZOrder		      3
       VariableName	      "phi_out"
       MaxDataPoints	      "inf"
-      Decimation	      "3"
       SaveFormat	      "Timeseries"
       Save2DSignal	      "3-D array (concatenate along third dimension)"
       FixptAsFi		      on
       SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      SID		      "38"
+      Ports		      [1]
+      Position		      [540, 275, 600, 305]
+      ZOrder		      8
+      VariableName	      "phi_mod_out"
+      MaxDataPoints	      "inf"
+      SaveFormat	      "Timeseries"
+      Save2DSignal	      "3-D array (concatenate along third dimension)"
+      FixptAsFi		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      TransferFcn
+      Name		      "Transfer Fcn"
+      SID		      "37"
+      Position		      [345, 272, 405, 308]
+      ZOrder		      7
+      Numerator		      "[K]"
+      Denominator	      "[T 1 0]"
     }
     Line {
       ZOrder		      1
@@ -1592,10 +1622,27 @@ Model {
       }
     }
     Line {
-      ZOrder		      9
+      ZOrder		      17
       SrcBlock		      "Step"
       SrcPort		      1
-      DstBlock		      "Cargo ship"
+      Points		      [60, 0]
+      Branch {
+	ZOrder			13
+	Points			[0, 80]
+	DstBlock		"Transfer Fcn"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			12
+	DstBlock		"Cargo ship"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      15
+      SrcBlock		      "Transfer Fcn"
+      SrcPort		      1
+      DstBlock		      "To Workspace1"
       DstPort		      1
     }
   }
