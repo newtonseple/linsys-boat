@@ -1,2 +1,2 @@
 # linsys-boat
-row, row, row yours
+Row, row, row yours.
