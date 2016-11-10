@@ -1,15 +1,30 @@
+% !TEX root = main.tex
 \section{Part 1: Identification of the boat  parameters}
 
 In the assignment text we were given the following model of a ship:
 \begin{subequations}
+	\label{eq:completeModel}
 		\begin{align}
-				\dot{\xi_w} &= \phi_w\\
-				\dot{\phi_w} &= -\omega_0^2\xi_w-2\lambda\omega_0\phi_w+K_ww_w\\
-				\dot{\phi} &= r\\
-				\dot{r} &= -\frac{1}{T}r+\frac{K}{T}(\delta-b)\\
-				\dot{b} &= w_b\\
-				y &= \phi + \phi_w + v
+				\dot{\xi_w} &= \phi_w \label{eq:xi_w}\\
+				\dot{\phi_w} &= -\omega_0^2\xi_w-2\lambda\omega_0\phi_w+K_ww_w \label{eq:phi_w}\\
+				\dot{\phi} &= r \label{eq:phi} \\
+				\dot{r} &= -\frac{1}{T}r+\frac{K}{T}(\delta-b) \label{eq:r} \\
+				\dot{b} &= w_b \label{eq:b} \\
+				y &= \phi + \phi_w + v \label{eq:y}
 		\end{align}
 \end{subequations}
 
-Where $\phi$ is the average heading, $\phi_w$ is a high frequency component due to the wave disturbance, $r$ the yaw rate and b is a bias to the rudder angle $\delta$.
+Where $\phi$ is the average heading, $\phi_w$ is a high frequency component due to the wave disturbance, $r$ the yaw rate and $b$ is a bias to the rudder angle $\delta$, $w_w$ and $w_b$ are white noice disturbances, $v$ is meassurement noise and $K$, $T$, $\lambda$ and $\omega_0$ are model parameters.
+
+Using this model we can find the transfer function from $\delta$ to $\phi$. taking the laplace transform of \cref{eq:phi} and \cref{eq:r} yields
+\begin{subequations}
+	\begin{align}
+		s\phi &= r \label{eq:Lphi}\\
+		sr &= -\frac{1}{T}r+\frac{K}{T}(\delta-b) \label{eq:Lr}
+	\end{align}
+\end{subequations}
+
+Assuming no disturbances $b = 0$ and combining \cref{eq:Lphi} with \cref{eq:Lr} gives
+\begin{equation}
+	H(s) = \frac{\phi}{\delta}(s) = \frac{K}{s^2T+s}
+\end{equation}
