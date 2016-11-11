@@ -15,10 +15,10 @@ subplot1 = subplot(2,1,1,'Parent',figure1);
 hold(subplot1,'on');
 
 % Create plot
-plot(getcolumn1,'Parent',subplot1,'DisplayName','\phi');
+plot(getcolumn1,'Parent',subplot1,'DisplayName','\psi');
 
 % Create stairs
-plot(getcolumn2,'Parent',subplot1,'DisplayName','\phi_r','LineStyle',':');
+plot(getcolumn2,'Parent',subplot1,'DisplayName','\psi_r','LineStyle',':');
 
 % Create xlabel
 xlabel(' ');
@@ -41,7 +41,7 @@ subplot2 = subplot(2,1,2,'Parent',figure1);
 hold(subplot2,'on');
 
 % Create plot
-plot(getcolumn3,'Parent',subplot2);
+plot(getcolumn3,'Parent',subplot2,'DisplayName','\delta');
 
 % Create xlabel
 xlabel({'Time (seconds)'});

@@ -6,7 +6,9 @@ omega_0 = 0.7823;
 lambda = 0.0827;
 K_w = 0.0050;
 
-%% Model(full)
+observable = @(A, C) (rank(obsv(A,C)) == size(A,1));
+
+%% Model (full)
 A = [0 1 0 0 0; 
     -omega_0^2 -2*lambda*omega_0 0 0 0;
     0 0 0 1 0 ;
@@ -21,9 +23,17 @@ B_b = [0; K/T];
 C_b = [1 0];
 
 %% Model (current disturbance)
-A_c = 
+A_c = [0 1 0;0 -1/T -K/T; 0 0 0];
+B_c = [0; K/T; 0];
+C_c = [1 0 0];
 
 %% Model (wave disturbance)
+A_d = [0 1 0 0; 
+    -omega_0^2 -2*lambda*omega_0 0 0;
+    0 0 0 1;
+    0 0 0 -1/T];
+B_d = [0;0;0;K/T];
+C_d = [0 1 1 0];
 
 %% Model (both disturbances)
 % = Full

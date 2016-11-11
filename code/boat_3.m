@@ -21,3 +21,6 @@ K_pd = sqrt((omega_c^2 * T_f)^2 + omega_c^2) / K
 %b) Does work? Yes. See plot no_disturbance
 %c) Does work? No. Bias. See plot current_disturbance
 %d) Does work? Ish. Wavy. See plot wave_disturbance
+
+sim('ship_3')
+gen_fig_3(phi_out,phi_r_out,delta_out)
