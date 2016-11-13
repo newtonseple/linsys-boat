@@ -43,16 +43,18 @@ To find $K$ and $T$ we use the frequency response of \cref{eq:T_psi_delta} with 
 \end{subequations}
 
 \begin{figure}
-	\missingfigure{Include graphics of frequency responses here}
-	\includegraphics{/path/to/figure}
-	\caption{}
+	\centering
+	\includegraphics[width=\textwidth]{images/oppg1/sin0005.pdf}
+	\caption{Response of the ship given a input of $\sin{0.005}$\\
+	Blue line is without any noise, red line is with both waves and meassurement noise}
 	\label{fig:sin0.005}
 \end{figure}
 
 \begin{figure}
-	\missingfigure{}
-	\includegraphics{/path/to/figure}
-	\caption{}
+	\centering
+	\includegraphics[width=\textwidth]{images/oppg1/sin005.pdf}
+	\caption{Response of the ship given a input of $\sin{0.05}$ \\
+	Blue line is without any noise, red line is with both waves and meassurement noise}
 	\label{fig:sin0.05}
 \end{figure}
 
@@ -74,8 +76,8 @@ If we simulate the ship with disturbance we see from \cref{fig:sin0.005}  and \c
 If we apply a step input of $1$ degree at $t=0$ we get the response seen in \cref{fig:step_1}. As we can see the model is close to the ``actual'' ship at the beginning, but as the time increases, so does the errors of the model. This means that for small $t$s the model is a good approximation.
 
 \begin{figure}
-	\missingfigure{Include plot of step response}
-	\includegraphics{/path/to/figure}
-	\caption{}
+	\centering
+	\includegraphics[width=\textwidth]{images/oppg1/step1_with_model_trafu.pdf}
+	\caption{Position of the ship and the model given a step input}
 	\label{fig:step_1}
 \end{figure}
