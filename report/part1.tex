@@ -29,12 +29,12 @@ Using this model we can find the transfer function from $\delta$ to $\psi$. Taki
 
 Assuming no disturbances $b = 0$ and combining \cref{eq:Lpsi} with \cref{eq:Lr} gives
 \begin{equation}
-	H(s) = \frac{\psi}{\delta}(s) = \frac{K}{s^2T+s} \label{eq:T_psi_delta}
+	H(s) = \frac{\psi}{\delta}(s) = \frac{K}{s^2T+s} \label{eq:H(s)}
 \end{equation}
 
 \subsection{1b)}
 
-To find $K$ and $T$ we use the frequency response of \cref{eq:T_psi_delta} with the frequencies $\omega_1 = 0.005\si{\radian\per\second}$ and $\omega_2 = 0.05\si{\radian\per\second}$, both with an amplitude of $1$. Using the provided ``ship'' we found the amplitudes experimentally (see \cref{fig:sin0.005} and \cref{fig:sin0.05}). This yields the equations
+To find $K$ and $T$ we use the frequency response of \cref{eq:H(s)} with the frequencies $\omega_1 = 0.005\si{\radian\per\second}$ and $\omega_2 = 0.05\si{\radian\per\second}$, both with an amplitude of $1$. Using the provided ``ship'' we found the amplitudes experimentally (see \cref{fig:sin0.005} and \cref{fig:sin0.05}). This yields the equations
 \begin{subequations}
 	\begin{align}
 		|H(j\omega_1)| &= \frac{K}{\sqrt{T^2\omega_1^4 + \omega_1^2}} = 31.9787 \label{eq:omega_1}\\
@@ -45,19 +45,18 @@ To find $K$ and $T$ we use the frequency response of \cref{eq:T_psi_delta} with 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{images/oppg1/sin0005.pdf}
-	\caption{Response of the ship given a input of $\sin{0.005}$\\
-	Blue line is without any noise, red line is with both waves and meassurement noise}
+	\caption{Response of the ship given a input of \ensuremath{\sin{0.005}}. 
+		Blue line is without any noise, red line is with both waves and meassurement noise.}
 	\label{fig:sin0.005}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{images/oppg1/sin005.pdf}
-	\caption{Response of the ship given a input of $\sin{0.05}$ \\
-	Blue line is without any noise, red line is with both waves and meassurement noise}
+	\caption{Response of the ship given a input of \ensuremath{\sin{0.05}}.
+		Blue line is without any noise, red line is with both waves and meassurement noise.}
 	\label{fig:sin0.05}
 \end{figure}
-
 
 Using MatLab function \texttt{solve} to solve this set of equations numerically yields
 \begin{subequations}

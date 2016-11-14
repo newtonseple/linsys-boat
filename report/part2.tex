@@ -6,9 +6,17 @@
 
 % Si noe om hva oppgaven er (finne \omega_0 og \lambda)
 
-\todo{Vil Bernt Johan skrive dette som har gjort det?}
+\todo[inline, author=Didrik]{Vil Bernt Johan skrive dette som har gjort det?}
 
 \subsection{2b)}
-To find the values of $\omega_0$ and $\lambda$ we can compare the estimated PSD of the waves with an analytical, found by using the model of the waves. In order to do this we first need to find the transfer function from $w_w$ to $\psi_w$. This can be done by taking the laplace transform of \todo{insert reference} and \todo{insert reference} yielding
+To find the values of $\omega_0$ and $\lambda$ we can compare the estimated PSD of the waves with an analytical, found by using the model of the waves. In order to do this we first need to find the transfer function from $w_w$ to $\psi_w$. This can be done by taking the laplace transform of \cref{eq:xi_w} and \cref{eq:psi_w} yielding
 
-\todo[inline]{Insert equations here}
+\begin{equation}
+    G(s) = \frac{\psi_w}{w_w}(s) = K_w\frac{s}{s^2+2\lambda\omega_0s+\omega_0^2} \label{eq:G(s)}
+\end{equation}
+
+To find the power spectral denity function we use that $S_y(\omega) = |H(j\omega)|^2S_u(\omega)$. This means
+
+\begin{equation}
+    P_{\psi_w}(\omega) = |G(j\omega)|^2 = K_w^2\frac{\omega^2}{\omega^4+2\omega_0^2(2\lambda^2-1)\omega^2+\omega_0^4} \label{eq:PSD}
+\end{equation}
