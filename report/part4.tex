@@ -9,22 +9,106 @@ The model in \cref{eq:completeModel} can be written on the form $\mathbf{\dot x}
 \begin{subequations}
     \begin{align}
         \mathbf{A} &= \begin{bmatrix}
-        1
+        0 & 1 & 0 & 0 & 0 \\
+        -\omega_0^2 & -2\lambda\omega_0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & -1/T & -K/T \\
+        0 & 0 & 0 & 0 & 0
         \end{bmatrix} \\
         \mathbf{B} &= \begin{bmatrix}
-        1
+        0 \\
+        0 \\
+        0 \\
+        K/T \\
+        0 \\
         \end{bmatrix} \\
         \mathbf{E} &= \begin{bmatrix}
-        1
+        0 & 0 \\
+        K_w & 0 \\
+        0 & 0 \\
+        0 & 0 \\
+        0 & 1 \\
         \end{bmatrix} \\
         \mathbf{C} &= \begin{bmatrix}
-        1
+        0 & 1 & 1 & 0 & 0
         \end{bmatrix}
     \end{align}
 \end{subequations}
 
-\todo{fyll inn matrisene}
+\subsection{4b)} \label{subsec:4b}
 
-\subsection{4b}
+ We first checked observability without any disturbance. To do this we removed the disturbances from the system. the resulting $\mathbf{A}$ and $\mathbf{C}$ matrices were
 
-To check observability we used checked if \texttt{rank(obsv(A, C)) == size(A,1)}. We first checked observability without any disturbance. The $\mathbf{A}$ and $\mathbf{C}$ weres
+\begin{subequations}
+    \begin{align}
+        \mathbf{A} &= \begin{bmatrix}
+        0 & 1 \\
+        0 & -1/T
+        \end{bmatrix} \\
+        \mathbf{C} &= \begin{bmatrix}
+        1 & 0
+        \end{bmatrix}
+    \end{align}
+\end{subequations}
+
+To find out whether the system is observable we checked if \texttt{rank(obsv(A, C)) == size(A,1)}. This code calculates the rank of the observability matrix $\mathcal{O}$, and compares it to the dimension of the matrix $\mathbf{A}$. Using this code we found that the system is observable without any disturbance.
+
+\subsection{4c)}
+
+Next we checked observability with the current disturbance. The $\mathbf{A}$ and $\mathbf{C}$ matrices used were
+
+\begin{subequations}
+    \begin{align}
+        \mathbf{A} &= \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & -1/T & -K/T \\
+        0 & 0 & 0
+        \end{bmatrix} \\
+        \mathbf{C} &= \begin{bmatrix}
+        1 & 0 & 0
+        \end{bmatrix}
+    \end{align}
+\end{subequations}
+
+Using the code in \cref{subsec:4b} we found that the system is observable with current disturbance.
+
+\subsection{4d)}
+
+Next we checked observability with the wave disturbance. The $\mathbf{A}$ and $\mathbf{C}$ matrices used were
+
+\begin{subequations}
+    \begin{align}
+        \mathbf{A} &= \begin{bmatrix}
+        0 & 1 & 0 & 0 \\
+        -\omega^2 & -2\lambda\omega_0 & 0 & 0 \\
+        0 & 0 & 0 & 1 \\
+        0 & 0 & 0 & - 1/T
+        \end{bmatrix} \\
+        \mathbf{C} &= \begin{bmatrix}
+        0 & 1 & 1 & 0
+        \end{bmatrix}
+    \end{align}
+\end{subequations}
+
+Using the code in \cref{subsec:4b} we found that the system is observable with wave disturbance.
+
+\subsection{4e)}
+
+Next we checked observability with both current and wave disturbance. The $\mathbf{A}$ and $\mathbf{C}$ matrices used were
+
+\begin{subequations}
+    \begin{align}
+        \mathbf{A} &= \begin{bmatrix}
+        0 & 1 & 0 & 0 & 0 \\
+        -\omega_0^2 & -2\lambda\omega_0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & -1/T & -K/T \\
+        0 & 0 & 0 & 0 & 0
+        \end{bmatrix} \\
+        \mathbf{C} &= \begin{bmatrix}
+        0 & 1 & 1 & 0 & 0
+        \end{bmatrix}
+    \end{align}
+\end{subequations}
+
+Using the code in \cref{subsec:4b} we found that the system is observable with both wave and current disturbance.
