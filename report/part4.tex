@@ -1,0 +1,30 @@
+% !TEX root=main.tex
+
+\section{Part 4: Observability}
+
+\subsection{4a)}
+
+The model in \cref{eq:completeModel} can be written on the form $\mathbf{\dot x} = \mathbf{A} \mathbf{x} + \mathbf{B}u + \mathbf{E}\mathbf{w}$, $ y = \mathbf{C}\mathbf{x} + v$, with $\mathbf{x} = [ \xi_w\ \psi_w\ \psi\ r\ b]^ T $ , $ u = \delta $ and $ \mathbf{w} = [w_w\ w_b]^T$. Then the matrices $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{E}$ are
+
+\begin{subequations}
+    \begin{align}
+        \mathbf{A} &= \begin{bmatrix}
+        1
+        \end{bmatrix} \\
+        \mathbf{B} &= \begin{bmatrix}
+        1
+        \end{bmatrix} \\
+        \mathbf{E} &= \begin{bmatrix}
+        1
+        \end{bmatrix} \\
+        \mathbf{C} &= \begin{bmatrix}
+        1
+        \end{bmatrix}
+    \end{align}
+\end{subequations}
+
+\todo{fyll inn matrisene}
+
+\subsection{4b}
+
+To check observability we used checked if \texttt{rank(obsv(A, C)) == size(A,1)}. We first checked observability without any disturbance. The $\mathbf{A}$ and $\mathbf{C}$ were
