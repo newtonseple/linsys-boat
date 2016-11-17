@@ -13,10 +13,10 @@
 % That is in degrees, need radians -> 0.002 * (pi/180)^2
 % =6.0923e-07
 % Must divide by Ts
-% =6.0923e-06
+% 
 
 %% c) Kalman filter (this is the main thing)
 Q = [30 0; 0 10^(-6)]
-R = 6.0923e-06
+R = 6.0923e-07
 P_pre = diag([1 0.013 pi^2 1 2.5e-4])
 x_pre = [0;0;0;0;0]
