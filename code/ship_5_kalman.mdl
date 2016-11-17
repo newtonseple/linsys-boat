@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.67"
+    ComputedModelVersion    "1.68"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-5.0, 198.0, 1375.0, 679.0]
+      Location		      [-6.0, -6.0, 1381.0, 885.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -52,11 +52,11 @@ Model {
 	Object {
 	  $ObjectID		  5
 	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [2658.0, 1038.0]
-	  ZoomFactor		  [0.8]
-	  Offset		  [-426.25, -107.68729239388642]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "68"
+	  Extents		  [2670.0, 1449.0]
+	  ZoomFactor		  [1.25]
+	  Offset		  [-25.996667186418449, -225.47999999999976]
 	}
 	Object {
 	  $ObjectID		  6
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Bernt Johan"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 17 17:37:19 2016"
-  RTWModifiedTimeStamp	  401305028
-  ModelVersionFormat	  "1.%<AutoIncrement:67>"
+  LastModifiedDate	  "Thu Nov 17 18:52:59 2016"
+  RTWModifiedTimeStamp	  401306964
+  ModelVersionFormat	  "1.%<AutoIncrement:68>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -837,6 +837,15 @@ Model {
       ContinuousStateAttributes	"''"
     }
     Block {
+      BlockType		      Memory
+      X0		      "0"
+      InheritSampleTime	      off
+      LinearizeMemory	      off
+      LinearizeAsDelay	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
@@ -988,8 +997,8 @@ Model {
   }
   System {
     Name		    "ship_5_kalman"
-    Location		    [-5, 198, 1370, 877]
-    Open		    on
+    Location		    [-6, -6, 1375, 879]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1000,9 +1009,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "95"
+    SIDHighWatermark	    "97"
     Block {
       BlockType		      TransferFcn
       Name		      "1/T_f s1"
@@ -1580,8 +1589,8 @@ Model {
       Variant		      off
       System {
 	Name			"Kalman filter"
-	Location		[-5, 198, 1370, 877]
-	Open			off
+	Location		[-6, -6, 1375, 879]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1810,6 +1819,14 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Memory
+	  Name			  "Memory"
+	  SID			  "96"
+	  Position		  [450, -20, 480, 10]
+	  ZOrder		  2192
+	  BlockRotation		  270
+	}
+	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
 	  SID			  "66"
@@ -2020,8 +2037,8 @@ Model {
 	  ZOrder		  157
 	  SrcBlock		  "MATLAB Function"
 	  SrcPort		  1
-	  Points		  [38, 0; 0, -95]
-	  DstBlock		  "Radians\nto Degrees"
+	  Points		  [40, 0]
+	  DstBlock		  "Memory"
 	  DstPort		  1
 	}
 	Line {
@@ -2116,6 +2133,14 @@ Model {
 	  DstBlock		  "Demux2"
 	  DstPort		  1
 	}
+	Line {
+	  ZOrder		  180
+	  SrcBlock		  "Memory"
+	  SrcPort		  1
+	  Points		  [0, -30; -2, 0]
+	  DstBlock		  "Radians\nto Degrees"
+	  DstPort		  1
+	}
       }
     }
     Block {
@@ -2157,14 +2182,14 @@ Model {
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
       "LoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'Serial"
-      "izedDisplays',{struct('MinYLimReal','20.30852','MaxYLimReal','29.12707','YLabelReal','','MinYLimMag','20.30852',"
-      "'MaxYLimMag','29.12707','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
+      "izedDisplays',{struct('MinYLimReal','23.57409','MaxYLimReal','33.36209','YLabelReal','','MinYLimMag','23.57409',"
+      "'MaxYLimMag','33.36209','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
       " 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667"
       ";0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608"
       " 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098039"
       "2156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNa"
-      "mes',{{'Cargo ship/1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','20.30"
-      "852','MaxYLimReal','29.12707','YLabelReal','','MinYLimMag','20.30852','MaxYLimMag','29.12707','LegendVisibility'"
+      "mes',{{'Cargo ship/1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','23.57"
+      "409','MaxYLimReal','33.36209','YLabelReal','','MinYLimMag','23.57409','MaxYLimMag','33.36209','LegendVisibility'"
       ",'off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6"
       "86274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 "
       "0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27"
@@ -2184,20 +2209,21 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
-      "',true,'SerializedDisplays',{struct('MinYLimReal','-5.56602','MaxYLimReal','29.64286','YLabelReal','','MinYLimMa"
-      "g','0.00000','MaxYLimMag','29.64286','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-49.7476','MaxYLimReal','55.52751','YLabelReal','','MinYLimMa"
+      "g','0.00000','MaxYLimMag','55.52751','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
       "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066"
       "6666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
       "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
       "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLin"
-      "es',5,'LineNames',{{'Kalman filter/3','Kalman filter/5','Kalman filter/10','Channel 4','Channel 5'}},'ShowConten"
-      "t',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-5.56602','MaxYLimReal','29.64286','YLab"
-      "elReal','','MinYLimMag','0.00000','MaxYLimMag','29.64286','LegendVisibility','off','XGrid',true,'YGrid',true,'Pl"
-      "otMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'C"
-      "olorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0"
-      ".717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1"
-      " 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configu"
-      "ration('Tools','Measurements',true,'Version','2015b')),'Version','2015b','Position',[35 416.5 560 420])"
+      "es',5,'LineNames',{{'Kalman filter/3','Kalman filter/8','Rudder saturation','Kalman filter/5','Cargo ship/1'}},'"
+      "ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-49.7476','MaxYLimReal','55.52"
+      "751','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','55.52751','LegendVisibility','off','XGrid',true,'YGrid"
+      "',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509"
+      "803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.06666666"
+      "66666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.05882352"
+      "94117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'Once"
+      "AtStop',false,'PreviousZoomMode','ZoomX','PreviousAutoscale','X'),extmgr.Configuration('Tools','Measurements',tr"
+      "ue,'Version','2015b')),'Version','2015b','Position',[2 389 906 420])"
       NumInputPorts	      "5"
     }
     Block {
@@ -2220,6 +2246,20 @@ Model {
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      SID		      "97"
+      Ports		      [2, 1]
+      Position		      [365, 200, 385, 220]
+      ZOrder		      2168
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|++"
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -2284,43 +2324,6 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      3
-      SrcBlock		      "Cargo ship"
-      SrcPort		      1
-      Points		      [100, 0]
-      Branch {
-	ZOrder			15
-	Points			[0, -40]
-	Branch {
-	  ZOrder		  6
-	  Points		  [0, -70]
-	  DstBlock		  "To Workspace"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  5
-	  DstBlock		  "Scope"
-	  DstPort		  1
-	}
-      }
-      Branch {
-	ZOrder			14
-	Points			[0, 120]
-	Branch {
-	  ZOrder		  138
-	  Points		  [-340, 0]
-	  DstBlock		  "Kalman filter"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  137
-	  Points		  [0, 70; -650, 0]
-	  DstBlock		  "Sum"
-	  DstPort		  2
-	}
-      }
-    }
-    Line {
       ZOrder		      11
       SrcBlock		      "Step"
       SrcPort		      1
@@ -2348,23 +2351,33 @@ Model {
       ZOrder		      23
       SrcBlock		      "Rudder saturation"
       SrcPort		      1
-      Points		      [33, 0]
+      Points		      [10, 0]
       Branch {
-	ZOrder			136
-	Points			[0, 225]
-	DstBlock		"Kalman filter"
-	DstPort			2
+	ZOrder			170
+	Points			[0, -32; -328, 0; 0, 202]
+	DstBlock		"Scope1"
+	DstPort			3
       }
       Branch {
-	ZOrder			22
-	Points			[0, -130]
-	DstBlock		"To Workspace2"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			21
-	DstBlock		"Cargo ship"
-	DstPort			1
+	ZOrder			169
+	Points			[23, 0]
+	Branch {
+	  ZOrder		  136
+	  Points		  [0, 225]
+	  DstBlock		  "Kalman filter"
+	  DstPort		  2
+	}
+	Branch {
+	  ZOrder		  22
+	  Points		  [0, -130]
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  21
+	  DstBlock		  "Cargo ship"
+	  DstPort		  1
+	}
       }
     }
     Line {
@@ -2375,35 +2388,97 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      121
-      SrcBlock		      "1/T_f s1"
+      ZOrder		      164
+      SrcBlock		      "Kalman filter"
+      SrcPort		      3
+      Points		      [-76, 0; 0, -45; -79, 0]
+      Branch {
+	ZOrder			193
+	DstBlock		"Sum"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			192
+	DstBlock		"Scope1"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      165
+      SrcBlock		      "Kalman filter"
+      SrcPort		      8
+      Points		      [-231, 0; 0, -85]
+      DstBlock		      "Scope1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      179
+      SrcBlock		      "Sum1"
       SrcPort		      1
       DstBlock		      "Rudder saturation"
       DstPort		      1
     }
     Line {
-      ZOrder		      149
-      SrcBlock		      "Kalman filter"
-      SrcPort		      3
-      Points		      [-76, 0; 0, -45]
-      DstBlock		      "Scope1"
+      ZOrder		      180
+      SrcBlock		      "1/T_f s1"
+      SrcPort		      1
+      DstBlock		      "Sum1"
       DstPort		      1
     }
     Line {
-      ZOrder		      151
-      SrcBlock		      "Kalman filter"
-      SrcPort		      5
-      Points		      [-231, 0; 0, -40]
-      DstBlock		      "Scope1"
-      DstPort		      2
+      ZOrder		      3
+      SrcBlock		      "Cargo ship"
+      SrcPort		      1
+      Points		      [100, 0]
+      Branch {
+	ZOrder			15
+	Points			[0, -40]
+	Branch {
+	  ZOrder		  6
+	  Points		  [0, -70]
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  5
+	  DstBlock		  "Scope"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	ZOrder			14
+	Points			[0, 120; -335, 0]
+	Branch {
+	  ZOrder		  167
+	  Points		  [0, -13; -165, 0; 0, 153]
+	  DstBlock		  "Scope1"
+	  DstPort		  5
+	}
+	Branch {
+	  ZOrder		  166
+	  Points		  [-5, 0]
+	  DstBlock		  "Kalman filter"
+	  DstPort		  1
+	}
+      }
     }
     Line {
-      ZOrder		      153
+      ZOrder		      188
       SrcBlock		      "Kalman filter"
-      SrcPort		      10
-      Points		      [-147, 0; 0, -10; -45, 0; 0, -70]
-      DstBlock		      "Scope1"
-      DstPort		      3
+      SrcPort		      5
+      Points		      [-10, 0]
+      Branch {
+	ZOrder			191
+	Points			[0, -150]
+	DstBlock		"Sum1"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			190
+	Points			[0, 30]
+	DstBlock		"Scope1"
+	DstPort			4
+      }
     }
   }
 }
