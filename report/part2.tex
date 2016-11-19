@@ -6,7 +6,8 @@
 
 % Si noe om hva oppgaven er (finne \omega_0 og \lambda)
 
-\todo[inline, author=Didrik]{Vil Bernt Johan skrive dette som har gjort det?}
+To estimate the Power Spectral Density, we use Welch's estimate, which is implemented in Matlab as seen in \cref{lst:p2}. The result is included in \cref{fig:PSD}.
+
 \lstinputlisting[language=Matlab, basicstyle=\small, caption={The Matlab code used in part 2}, label={lst:p2},float]{listings/estimate_psd.m}
 
 \subsection{2b)}
@@ -24,7 +25,18 @@ To find the power spectral density function we use that $S_y(\omega) = |H(j\omeg
 
 
 \subsection{2c)}
-\todo[inline]{Skriv stuff her}
+
+$\omega_0$ was estimated as the maximum frequency in the PSD estimate, as shown in \cref{lst:p2}. This frequency is $0.7823\si{\Hz}$.
 
 \subsection{2d)}
-\todo[inline]{Skriv stuff her}
+
+$\lambda$ was estimated using the Matlab function \texttt{lsqcurvefit}, which iterates toward the $\lambda$ that yields a curve closest to the PSD estimate. The resulting $\lambda$ is $0.0827$.
+
+The PSD of the model, using these parameters, together with the PSD estimate from the data, is plotted in \cref{fig:PSD}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/oppg2/PSD}
+	\caption{Estimated PSD from data and PSD of model.}
+	\label{fig:PSD}
+\end{figure}
