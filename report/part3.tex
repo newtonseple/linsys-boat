@@ -53,7 +53,7 @@ Inserting \cref{eq:T_f} into \cref{eq:K_pd(T_f)} yields a $K_{pd} = 0.7494$. The
 
 \subsection{3b)}
 
-As we can see in \cref{fig:step_no_dist} the controller does a good job when there are no disturbances. The ship reaches the reference $\psi_r$ of $30\si{\degree}$ within 2 minutes, and the rudder angle is relatively constant over time.
+As we can see in \cref{fig:step_no_dist} the controller does a good job when there are no disturbances. The ship gets close to reference $\psi_r$ of $30\si{\degree}$ about 2 minutes, and the rudder angle is relatively constant over time.
 
 \begin{figure}
     \centering
@@ -64,7 +64,7 @@ As we can see in \cref{fig:step_no_dist} the controller does a good job when the
 
 \subsection{3c)}
 
-In \cref{fig:step_current_dist} we see the response of the controller with current disturbance. as we can see the controller is unable to counteract the constant disturbance of the current, which leads to a large constant deviation from the setpoint.
+In \cref{fig:step_current_dist} we see the response of the controller with current disturbance. As we can see the controller is unable to counteract the constant disturbance of the current, which leads to a large constant deviation from the setpoint.
 
 \begin{figure}
     \centering
@@ -75,7 +75,7 @@ In \cref{fig:step_current_dist} we see the response of the controller with curre
 
 \subsection{3d)}
 
-When we apply wave current (and turn off current disturbance), we see that the controller does it best to remove the noise but is unable to do much. In its attempt to remove the noise it applies a lot of rudder input, which if the boat was real would stress the physical system.
+When we apply wave current (and turn off current disturbance), we see in \cref{fig:step_wave_dist} that the controller does its best to remove the noise but is unable to do much about it. In its attempt to remove the noise it applies a lot of rudder input, which if the boat were real would stress the physical system.
 
 \begin{figure}
     \centering
