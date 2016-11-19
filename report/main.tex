@@ -20,6 +20,7 @@
 \usepackage{tabularx}
 \def\tabularxcolumn#1{m{#1}}
 
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}} % numerate the subsections as 1.a, 1.b and so on
 \newcommand{\TODO}[1]{\todo[inline]{#1}}
 \newcommand{\mbf}[1]{\mathbf{#1}} % Arg 1 is bold (in math environment)
 \newcommand{\partialderiv}[2]{\frac{\partial{#1}}{\partial{#2}}} % prints partial derivative as a fraction
