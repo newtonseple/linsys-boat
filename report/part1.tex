@@ -17,7 +17,7 @@ In the assignment text we were given the following model of a ship:
 Where $\psi$ is the average heading, $\psi_w$ is a high frequency component due to the wave disturbance, $r$ the yaw rate and $b$ is a bias to the rudder angle $\delta$, $w_w$ and $w_b$ are white noice disturbances, $v$ is meassurement noise and $K$, $T$, $\lambda$ and $\omega_0$ are model parameters.
 
 
-\subsection{1a)}
+\subsection{Transfer function of model}
 
 Using this model we can find the transfer function from $\delta$ to $\psi$. Taking the laplace transform of \cref{eq:psi} and \cref{eq:r} yields
 \begin{subequations}
@@ -32,7 +32,7 @@ Assuming no disturbances $b = 0$ and combining \cref{eq:Lpsi} with \cref{eq:Lr} 
 	H_{ship}(s) = \frac{\psi}{\delta}(s) = \frac{K}{s^2T+s} \label{eq:H(s)}
 \end{equation}
 
-\subsection{1b)}
+\subsection{Finding $K$ and $T$}
 
 To find $K$ and $T$ we use the frequency response of \cref{eq:H(s)} with the frequencies $\omega_1 = 0.005\si{\radian\per\second}$ and $\omega_2 = 0.05\si{\radian\per\second}$, both with an amplitude of $1$. Using the provided ``ship'' we found the amplitudes experimentally (see \cref{fig:sin0.005} and \cref{fig:sin0.05}). This yields the equations
 \begin{subequations}
@@ -66,11 +66,11 @@ Using Matlab function \texttt{solve} to solve this set of equations numerically 
 	\end{align}
 \end{subequations}
 
-\subsection{1c)}
+\subsection{Not finding $K$ and $T$ in a noisy environment}
 
-If we simulate the ship with disturbance we see from \cref{fig:sin0.005}  and \cref{fig:sin0.05} that we get a noise component on top of the sinusoidal response. This makes it hard to find the true amplitude of the response, as we cannot simply use the half difference between the maximum and minimum.
+If we simulate the ship with disturbance we see from \cref{fig:sin0.005}  and \cref{fig:sin0.05} that we get a noise component on top of the sinusoidal response. This makes it harder, if not impossible to find the true amplitude of the response, as we cannot simply use the half difference between the maximum and minimum.
 
-\subsection{1d)}
+\subsection{Judging the model}
 
 If we apply a step input of $1$ degree at $t=0$ we get the response seen in \cref{fig:step_1}. As we can see the model is close to the ``actual'' ship at the beginning, but as the time increases, so does the errors of the model. This means that for small $t$s the model is a good approximation.
 
