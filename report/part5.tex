@@ -50,6 +50,7 @@ Another thing we need to make a Kalman filter is the variance of the measurement
 \subsection{5c)}
 
 A Kalman filter was implemented using Simulink with a Matlab function block. The custom Kalman filter subsystems structure is shown in \cref{fig:kalman_subsys}. The rudder angle and measured compass angle are converted to radians, discretized by a zero-order hold block, and passed into the Kalman filter function. The estimated state from the filter is passed through a memory block to avoid an algebraic loop, converted back to degrees, and finally split up to expose the different states.
+
 The Kalman filter function itself is listed in \cref{lst:kalman}. The first time the function is called, it initializes the a priori states to the provided values. After that, it calculates the Kalman gain, state estimate and covariance estimate using the update equations
 
 \begin{subequations}
@@ -82,6 +83,10 @@ and finally updates the a priori estimates using the prediction equations
 
 \subsection{5d)}
 
+The estimated bias from the Kalman filter was added to the rudder angle input, as shown in \cref{fig:bias_ff}.
+
+As we can see from \cref{fig:5d}, the estimated bias feed-forward tackles the current disturbance, eliminating the constant deviation. In this respect it is clearly superior to the simple PD controller, which is unable to reach the reference compass angle, as seen in \cref{fig:step_current_dist}.
+
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images/oppg5/bias_FF.pdf}
@@ -98,6 +103,10 @@ and finally updates the a priori estimates using the prediction equations
 
 
 \subsection{5e)}
+
+The PD controller feedback was changed from the measurment to the wave-filtered estimate from the Kalman filter, as seen in \cref{fig:filtered_fb}.
+
+As we can see from \cref{fig:5e}, the new controller based on the wave-filtered output keeps the compass angle about as well as the simple PD controller (\cref{fig:step_wave_dist}) when exposed to wave disturbance, but with considerably smaller adjustments to the rudder angle over time. Avoiding stress of components, this is a clear improvement.
 
 \begin{figure}
     \centering
