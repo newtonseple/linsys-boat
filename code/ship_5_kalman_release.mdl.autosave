@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.78"
+    ComputedModelVersion    "1.76"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -65,9 +65,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Bernt Johan"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 19 14:57:58 2016"
-  RTWModifiedTimeStamp	  401468277
-  ModelVersionFormat	  "1.%<AutoIncrement:78>"
+  LastModifiedDate	  "Sat Nov 19 13:34:24 2016"
+  RTWModifiedTimeStamp	  401466615
+  ModelVersionFormat	  "1.%<AutoIncrement:76>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1019,7 +1019,7 @@ Model {
 	    Type		    "checkbox"
 	    Name		    "logic"
 	    Prompt		    "waves"
-	    Value		    "on"
+	    Value		    "off"
 	  }
 	  PropName		  "Parameters"
 	}
@@ -2209,25 +2209,25 @@ Model {
       Branch {
 	ZOrder			233
 	Points			[0, 100]
-	DstBlock		"Kalman filter"
-	DstPort			1
+	Branch {
+	  ZOrder		  248
+	  DstBlock		  "Kalman filter"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  246
+	  Points		  [0, 102; -508, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
       }
     }
     Line {
       ZOrder		      231
       SrcBlock		      "Kalman filter"
       SrcPort		      3
-      Points		      [-230, 0]
-      Branch {
-	ZOrder			254
-	DstBlock		"Sum"
-	DstPort			2
-      }
-      Branch {
-	ZOrder			253
-	DstBlock		"To Workspace4"
-	DstPort			1
-      }
+      DstBlock		      "To Workspace4"
+      DstPort		      1
     }
     Line {
       ZOrder		      236
