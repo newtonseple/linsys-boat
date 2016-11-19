@@ -1,0 +1,44 @@
+% !TEX root=main.tex
+
+\section{Discrete Kalman filter}
+
+\subsection{5a)}
+
+To make a discrete Kalman filter we need to discretize the model found in \cref{subsec:4a}. The discretized system can be found using the equations
+
+\begin{subequations}
+    \begin{align}
+        A_d &= e^{AT_s} \\
+        B_d &= \int_0^{T_s} e^{A\tau}B d\tau \\
+        E_d &= \int_0^{T_s} e^{A\tau}E d\tau \\
+        C_d &= C
+    \end{align}
+\end{subequations}
+
+This can be done using he MatLab function \texttt{[Ad, Bd] = c2d(A, B, Ts)} to get the discretized matrices $A_d$ and $B_d$ discretized with a timestep of \texttt{Ts}. To get the model discretized with a sampling frequency of $10\si{\hertz}$ we set \texttt{Ts} to $0.1$. In order to get $E_d$ we use the same function, but swap \texttt{Bd} and \texttt{B} with \texttt{Ed} and \texttt{E}. The resulting $A_d$, $B_d$ and $E_d$ matrices are
+
+\begin{subequations}
+    \begin{align}
+        A_d &= \begin{bmatrix}
+        0.1000 & 0.0993 & 0 & 0 & 0 \\
+        -0.0607 & 0.9841 & 0 & 0 & 0 \\
+        0 & 0 & 1 & 0.0999 & -1.0063 \cdot 10^{-5} \\
+        0 & 0 & 0 & 0.1000 & -0.0002 \\
+        0 & 0 & 0 & 0 & 1
+        \end{bmatrix} \\
+        B_d &= \begin{bmatrix}
+        0 \\
+        0 \\
+        1.0062 \cdot 10^{-5} \\
+        0.0002 \\
+        0
+        \end{bmatrix} \\
+        E_ d &= \begin{bmatrix}
+        2.4880\cdot 10^{-5} & 0 \\
+        0.0005 & 0 \\
+        0 & -3.3545\cdot 10^{-7} \\
+        0 & -1.0063\cdot 10^{-5} \\
+        0 & 0.1000
+        \end{bmatrix}
+    \end{align}
+\end{subequations}
