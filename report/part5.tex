@@ -49,6 +49,32 @@ Another thing we need to make a Kalman filter is the variance of the measurement
 
 \subsection{5c)}
 
+% Update step
+%K = P_est_pre*transpose(Cd)/(Cd*P_est_pre*transpose(Cd) + R);
+%x_est = x_est_pre + K * (psi_meas - Cd*x_est_pre);
+%P_est = (eye(5)-K*Cd)*P_est_pre*transpose(eye(5)-K*Cd) + K*R*transpose(K);
+
+\begin{subequations}
+    \begin{align}
+        K_k &= P_k^-C_d^T(C_dP_k^-C_d^T+R)^{-1} \\
+        \hat{x}_k &= \hat{x}_k^- + K_k(y_k - C_d\hat{x}_k^-) \\
+        P_k &= (I - K_kC_d)P_k^-(I-K_kC_d) + K_kRK_k^T
+    \end{align}
+
+\end{subequations}
+
+%% Projection step
+%x_est_pre = Ad*x_est + Bd*delta;
+%P_est_pre = Ad*P_est*transpose(Ad) + Ed*Q*transpose(Ed);
+
+\begin{subequations}
+    \begin{align}
+        \hat{x}_{k+1}^- &= A_d\hat{x}_k \\
+        P_{k+1}^- &= A_d P_k A_d^T + E_d Q E_d^T
+    \end{align}
+
+\end{subequations}
+
 \lstinputlisting[language=Matlab, basicstyle=\small, caption={Matlab implementation of the discrete Kalman filter}, label={lst:listing2},float]{listings/kalman.m}
 
 \begin{figure}
