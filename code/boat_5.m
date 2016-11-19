@@ -20,3 +20,7 @@ Q = [30 0; 0 10^(-6)]
 R = 6.0923e-06
 P_pre = diag([1 0.013 pi^2 1 2.5e-4])
 x_pre = [0;0;0;0;0]
+
+%% simulation
+%sim('ship_5_kalman_release')
+%gen_fig_5d(phi_out,phi_r_out,delta_out)
