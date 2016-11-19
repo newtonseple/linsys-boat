@@ -28,6 +28,6 @@ K = P_est_pre*transpose(Cd)/(Cd*P_est_pre*transpose(Cd) + R);
 x_est = x_est_pre + K * (psi_meas - Cd*x_est_pre);
 P_est = (eye(5)-K*Cd)*P_est_pre*transpose(eye(5)-K*Cd) + K*R*transpose(K);
 
-% Projection step
+% Prediction step
 x_est_pre = Ad*x_est + Bd*delta;
 P_est_pre = Ad*P_est*transpose(Ad) + Ed*Q*transpose(Ed);

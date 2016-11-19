@@ -54,6 +54,10 @@ Another thing we need to make a Kalman filter is the variance of the measurement
 %x_est = x_est_pre + K * (psi_meas - Cd*x_est_pre);
 %P_est = (eye(5)-K*Cd)*P_est_pre*transpose(eye(5)-K*Cd) + K*R*transpose(K);
 
+A Kalman filter was implemented using Simulink with a Matlab function block. The custom Kalman filter subsystems structure is shown in \cref{fig:kalman_subsys}. The rudder angle and measured compass angle are converted to radians, discretized by a zero-order hold block, and passed into the Kalman filter function. The estimated state from the filter is passed through a memory block to avoid an algebraic loop, converted back to degrees, and finally split up to expose the different states.
+
+The Kalman filter function itself is listed in \cref{lst:kalman}. The first time the function is called, it initializes the a priori states to the provided values. After that, it calculates the Kalman gain, state estimate and covariance estimate using the update equations
+
 \begin{subequations}
     \begin{align}
         K_k &= P_k^-C_d^T(C_dP_k^-C_d^T+R)^{-1} \\
@@ -67,6 +71,8 @@ Another thing we need to make a Kalman filter is the variance of the measurement
 %x_est_pre = Ad*x_est + Bd*delta;
 %P_est_pre = Ad*P_est*transpose(Ad) + Ed*Q*transpose(Ed);
 
+and finally updates the a priori estimates using the prediction equations
+
 \begin{subequations}
     \begin{align}
         \hat{x}_{k+1}^- &= A_d\hat{x}_k \\
@@ -75,7 +81,7 @@ Another thing we need to make a Kalman filter is the variance of the measurement
 
 \end{subequations}
 
-\lstinputlisting[language=Matlab, basicstyle=\small, caption={Matlab implementation of the discrete Kalman filter}, label={lst:listing2},float]{listings/kalman.m}
+\lstinputlisting[language=Matlab, basicstyle=\small, caption={Matlab implementation of the discrete Kalman filter}, label={lst:kalman},float]{listings/kalman.m}
 
 \begin{figure}
     \centering
@@ -96,8 +102,8 @@ Another thing we need to make a Kalman filter is the variance of the measurement
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images/oppg5/5d.eps}
-    \caption{Implementation of the Kalman filter subsystem in Simulink.}
-    \label{fig:kalman_subsys}
+    \caption{Simulation results with estimated bias feed-forward.}
+    \label{fig:5d}
 \end{figure}
 
 
@@ -106,8 +112,8 @@ Another thing we need to make a Kalman filter is the variance of the measurement
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images/oppg5/5e.eps}
-    \caption{Implementation of the Kalman filter subsystem in Simulink.}
-    \label{fig:kalman_subsys}
+    \caption{Simulation results with estimated bias feed-forward and wave-filtered feedback}
+    \label{fig:5e}
 \end{figure}
 
 \begin{figure}
