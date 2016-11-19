@@ -45,4 +45,46 @@ This can be done using he MatLab function \texttt{[Ad, Bd] = c2d(A, B, Ts)} to g
 
 \subsection{5b)}
 
-Another thing we need to make a Kalman filter is the variance of the measurement noise. The variance was found by simulating long timeseries of the ship with a input of zero, and with measurement noise turned on. The variance was found using the MatLab function \texttt{ts\_var = var(ts)}, where \texttt{ts} is a timeseries, and \texttt{ts\_var} is the variance of the timeseries. The variance of the measurement noise was found to be $0.002$. However this is in degrees squared, whereas we want the variance in radians (squared). This gives us a variance of $6.0923 \cdot 10^{-6}$. 
+Another thing we need to make a Kalman filter is the variance of the measurement noise. The variance was found by simulating long timeseries of the ship with a input of zero, and with measurement noise turned on. The variance was found using the MatLab function \texttt{ts\_var = var(ts)}, where \texttt{ts} is a timeseries, and \texttt{ts\_var} is the variance of the timeseries. The variance of the measurement noise was found to be $0.002$. However this is in degrees squared, whereas we want the variance in radians (squared). This gives us a variance of $6.0923 \cdot 10^{-6}$.
+
+\subsection{5c)}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/oppg5/c_kalman.pdf}
+    \caption{Implementation of the Kalman filter subsystem in Simulink.}
+    \label{fig:kalman_subsys}
+\end{figure}
+
+\subsection{5d)}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/oppg5/bias_FF.pdf}
+    \caption{Simulink implementation of PD control with estimated bias feed forward.}
+    \label{fig:bias_ff}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/oppg5/5d.eps}
+    \caption{Implementation of the Kalman filter subsystem in Simulink.}
+    \label{fig:kalman_subsys}
+\end{figure}
+
+
+\subsection{5e)}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/oppg5/5e.eps}
+    \caption{Implementation of the Kalman filter subsystem in Simulink.}
+    \label{fig:kalman_subsys}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/oppg5/bias_FF_and_filtered_FB.pdf}
+    \caption{Simulink implementation of PD control with estimated bias feed forward, and filtered feedback.}
+    \label{fig:filtered_fb}
+\end{figure}
