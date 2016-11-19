@@ -2,7 +2,7 @@
 
 \section{Discrete Kalman filter}
 
-\subsection{5a)}
+\subsection{Discretization of the model}
 
 To make a discrete Kalman filter we need to discretize the model found in \cref{subsec:4a}. The discretized system can be found using the equations
 
@@ -43,11 +43,11 @@ This can be done using he Matlab function \texttt{[Ad, Bd] = c2d(A, B, Ts)} to g
     \end{align}
 \end{subequations}
 
-\subsection{5b)}
+\subsection{Estimating the variance of the measurement noise}
 
 Another thing we need to make a Kalman filter is the variance of the measurement noise. The variance was found by simulating long timeseries of the ship with a input of zero, and with measurement noise turned on. The variance was found using the Matlab function \texttt{ts\_var = var(ts)}, where \texttt{ts} is a timeseries, and \texttt{ts\_var} is the variance of the timeseries. The variance of the measurement noise was found to be $0.002$. However this is in degrees squared, whereas we want the variance in radians (squared). This gives us a variance of $6.0923 \cdot 10^{-6}$.
 
-\subsection{5c)}
+\subsection{Implementation of the Kalman filter}
 
 A Kalman filter was implemented using Simulink with a Matlab function block. The custom Kalman filter subsystems structure is shown in \cref{fig:kalman_subsys}. The rudder angle and measured compass angle are converted to radians, discretized by a zero-order hold block, and passed into the Kalman filter function. The estimated state from the filter is passed through a memory block to avoid an algebraic loop, converted back to degrees, and finally split up to expose the different states.
 
@@ -81,7 +81,7 @@ and finally updates the a priori estimates using the prediction equations
     \label{fig:kalman_subsys}
 \end{figure}
 
-\subsection{5d)}
+\subsection{Performance with current disturbance}
 
 The estimated bias from the Kalman filter was added to the rudder angle input, as shown in \cref{fig:bias_ff}.
 
@@ -102,7 +102,7 @@ As we can see from \cref{fig:5d}, the estimated bias feed-forward tackles the cu
 \end{figure}
 
 
-\subsection{5e)}
+\subsection{Performance with both disturbances}
 
 The PD controller feedback was changed from the measurment to the wave-filtered estimate from the Kalman filter, as seen in \cref{fig:filtered_fb}.
 

@@ -2,7 +2,7 @@
 
 \section{Part 2: Identification of wave spectrum model}
 
-\subsection{2a)}
+\subsection{Estimating PSD from data}
 
 % Si noe om hva oppgaven er (finne \omega_0 og \lambda)
 
@@ -10,7 +10,7 @@ To estimate the Power Spectral Density, we use Welch's estimate, which is implem
 
 \lstinputlisting[language=Matlab, basicstyle=\small, caption={The Matlab code used in part 2}, label={lst:p2},float]{listings/estimate_psd.m}
 
-\subsection{2b)}
+\subsection{Defining PSD of model}
 To find the values of $\omega_0$ and $\lambda$ we can compare the estimated PSD of the waves with an analytical, found by using the model of the waves. In order to do this we first need to find the transfer function from $w_w$ to $\psi_w$. This can be done by taking the laplace transform of \cref{eq:xi_w} and \cref{eq:psi_w} yielding
 
 \begin{equation}
@@ -24,11 +24,11 @@ To find the power spectral density function we use that $S_y(\omega) = |H(j\omeg
 \end{equation}
 
 
-\subsection{2c)}
+\subsection{Finding $\omega_0$}
 
 $\omega_0$ was estimated as the maximum frequency in the PSD estimate, as shown in \cref{lst:p2}. This frequency is $0.7823\si{\Hz}$.
 
-\subsection{2d)}
+\subsection{Finding $\lambda$}
 
 $\lambda$ was estimated using the Matlab function \texttt{lsqcurvefit}, which iterates toward the $\lambda$ that yields the curve closest to the PSD estimate. The resulting $\lambda$ is $0.0827$.
 

@@ -2,7 +2,7 @@
 
 \section{Part 3: Control system design}
 
-\subsection{3a)}
+\subsection{PD controller design}
 
 We want to design a limited PD controller with the transfer function
 
@@ -51,7 +51,7 @@ Inserting \cref{eq:T_f} into \cref{eq:K_pd(T_f)} yields a $K_{pd} = 0.7494$. The
     \label{fig:pd}
 \end{figure}
 
-\subsection{3b)}
+\subsection{Performance without disturbances}
 
 As we can see in \cref{fig:step_no_dist} the controller does a good job when there are no disturbances. The ship gets close to reference $\psi_r$ of $30\si{\degree}$ about 2 minutes, and the rudder angle is relatively constant over time.
 
@@ -62,7 +62,7 @@ As we can see in \cref{fig:step_no_dist} the controller does a good job when the
     \label{fig:step_no_dist}
 \end{figure}
 
-\subsection{3c)}
+\subsection{Performance with a current disturbance}
 
 In \cref{fig:step_current_dist} we see the response of the controller with current disturbance. As we can see the controller is unable to counteract the constant disturbance of the current, which leads to a large constant deviation from the setpoint.
 
@@ -73,7 +73,7 @@ In \cref{fig:step_current_dist} we see the response of the controller with curre
     \label{fig:step_current_dist}
 \end{figure}
 
-\subsection{3d)}
+\subsection{Performance with wave disturbance}
 
 When we apply wave current (and turn off current disturbance), we see in \cref{fig:step_wave_dist} that the controller does its best to remove the noise but is unable to do much about it. In its attempt to remove the noise it applies a lot of rudder input, which if the boat were real would stress the physical system.
 

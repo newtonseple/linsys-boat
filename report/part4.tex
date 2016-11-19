@@ -2,7 +2,7 @@
 
 \section{Part 4: Observability}
 
-\subsection{4a)} \label{subsec:4a}
+\subsection{Defining the matrices of the model system} \label{subsec:4a}
 
 The model in \cref{eq:completeModel} can be written on the form $\mathbf{\dot x} = \mathbf{A} \mathbf{x} + \mathbf{B}u + \mathbf{E}\mathbf{w}$, $ y = \mathbf{C}\mathbf{x} + v$, with $\mathbf{x} = [ \xi_w\ \psi_w\ \psi\ r\ b]^ T $ , $ u = \delta $ and $ \mathbf{w} = [w_w\ w_b]^T$. Then the matrices $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{E}$ are
 
@@ -35,7 +35,7 @@ The model in \cref{eq:completeModel} can be written on the form $\mathbf{\dot x}
     \end{align}
 \end{subequations}
 
-\subsection{4b)} \label{subsec:4b}
+\subsection{Observability without disturbances} \label{subsec:4b}
 
  We first checked observability without any disturbance. To do this we removed the disturbances from the system. the resulting $\mathbf{A}$ and $\mathbf{C}$ matrices were
 
@@ -53,7 +53,7 @@ The model in \cref{eq:completeModel} can be written on the form $\mathbf{\dot x}
 
 To find out whether the system is observable we checked if \texttt{rank(obsv(A, C)) == size(A,1)}. This code calculates the rank of the observability matrix $\mathcal{O}$, and compares it to the dimension of the matrix $\mathbf{A}$. Using this code we found that the system is observable without any disturbance.
 
-\subsection{4c)}
+\subsection{Observability with a current disturbance}
 
 Next we checked observability with the current disturbance. The $\mathbf{A}$ and $\mathbf{C}$ matrices used were
 
@@ -72,7 +72,7 @@ Next we checked observability with the current disturbance. The $\mathbf{A}$ and
 
 Using the code in \cref{subsec:4b} we found that the system is observable with current disturbance.
 
-\subsection{4d)}
+\subsection{Observability with wave disturbance}
 
 Next we checked observability with the wave disturbance. The $\mathbf{A}$ and $\mathbf{C}$ matrices used were
 
@@ -92,7 +92,7 @@ Next we checked observability with the wave disturbance. The $\mathbf{A}$ and $\
 
 Using the code in \cref{subsec:4b} we found that the system is observable with wave disturbance.
 
-\subsection{4e)}
+\subsection{Observability with both disturbances}
 
 Next we checked observability with both current and wave disturbance. The $\mathbf{A}$ and $\mathbf{C}$ matrices used were
 
