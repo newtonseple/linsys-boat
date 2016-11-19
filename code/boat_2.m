@@ -1,11 +1,10 @@
 % Assume psi_w exists
 
 %% 5.2a - find Pxx estimate
-psi_w_data = psi_w(2,:);
-psi_w_data = psi_w_data * pi / 180;
-[pxx, f] = pwelch(psi_w_data,4096,[],[],10);
-
-pxx = pxx / (2*pi);
+psi_w_data = psi_w(2,:);                     % Load data
+psi_w_data = psi_w_data * pi / 180;          % Convert data to radians
+[pxx, f] = pwelch(psi_w_data,4096,[],[],10); % Estimate Pxx
+pxx = pxx / (2*pi);                          % Convert Pxx
 f = f*2*pi;
 hold off
 plot(f,pxx);

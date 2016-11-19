@@ -1,5 +1,5 @@
 Model {
-  Name			  "ship_5_kalman"
+  Name			  "ship_5_kalman_release"
   Version		  8.6
   MdlSubVersion		  0
   SavedCharacterEncoding  "windows-1252"
@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.68"
+    ComputedModelVersion    "1.73"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -29,7 +29,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-6.0, 0.0, 1381.0, 885.0]
+      Location		      [-6.0, -6.0, 1381.0, 885.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -51,19 +51,19 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "68"
 	  Extents		  [2670.0, 1449.0]
-	  ZoomFactor		  [0.6]
-	  Offset		  [-463.0333333333316, -652.16666666666708]
+	  ZoomFactor		  [1.5]
+	  Offset		  [-26.650000000000205, -177.61666666666673]
 	}
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "1"
-	  Extents		  [2670.0, 1449.0]
+	  Extents		  [5340.0, 2898.0]
 	  ZoomFactor		  [1.0]
 	  Offset		  [0.0, 0.0]
 	}
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Bernt Johan"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 17 18:52:59 2016"
-  RTWModifiedTimeStamp	  401311434
-  ModelVersionFormat	  "1.%<AutoIncrement:68>"
+  LastModifiedDate	  "Sat Nov 19 12:37:15 2016"
+  RTWModifiedTimeStamp	  401459826
+  ModelVersionFormat	  "1.%<AutoIncrement:73>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -123,11 +123,11 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "ship_5_kalman"
+    model_		    "ship_5_kalman_release"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "ship_5_kalman"
+      Cell		      "ship_5_kalman_release"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -892,27 +892,6 @@ Model {
       RndMeth		      "Floor"
     }
     Block {
-      BlockType		      Scope
-      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
-      NumInputPorts	      "1"
-      Floating		      off
-    }
-    Block {
-      BlockType		      Sqrt
-      Operator		      "sqrt"
-      OutputSignalType	      "auto"
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
-      AlgorithmType	      "Exact"
-      Iterations	      "3"
-    }
-    Block {
       BlockType		      Step
       Time		      "1"
       Before		      "0"
@@ -972,17 +951,6 @@ Model {
       BlockType		      Terminator
     }
     Block {
-      BlockType		      ToWorkspace
-      VariableName	      "simulink_output"
-      MaxDataPoints	      "1000"
-      Decimation	      "1"
-      SaveFormat	      "Array"
-      Save2DSignal	      "Inherit from input (this choice will be removed - see release notes)"
-      FixptAsFi		      off
-      NumInputs		      "1"
-      SampleTime	      "0"
-    }
-    Block {
       BlockType		      TransferFcn
       Numerator		      "[1]"
       Denominator	      "[1 2 1]"
@@ -996,9 +964,9 @@ Model {
     }
   }
   System {
-    Name		    "ship_5_kalman"
-    Location		    [-6, 0, 1375, 885]
-    Open		    on
+    Name		    "ship_5_kalman_release"
+    Location		    [-6, -6, 1375, 879]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1009,14 +977,14 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "60"
+    ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "98"
+    SIDHighWatermark	    "102"
     Block {
       BlockType		      TransferFcn
       Name		      "1/T_f s1"
       SID		      "50"
-      Position		      [195, 192, 255, 228]
+      Position		      [280, 192, 340, 228]
       ZOrder		      20
       Numerator		      "[T_d 1]"
       Denominator	      "[T_f 1]"
@@ -1026,7 +994,7 @@ Model {
       Name		      "Cargo ship"
       SID		      "1"
       Ports		      [1, 4]
-      Position		      [540, 180, 645, 245]
+      Position		      [545, 172, 650, 248]
       ZOrder		      -1
       BackgroundColor	      "green"
       RequestExecContextInheritance off
@@ -1068,7 +1036,7 @@ Model {
       }
       System {
 	Name			"Cargo ship"
-	Location		[-6, 0, 1375, 885]
+	Location		[-6, -6, 1375, 879]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1587,7 +1555,7 @@ Model {
       BlockType		      Gain
       Name		      "K_pd"
       SID		      "36"
-      Position		      [120, 192, 165, 228]
+      Position		      [205, 192, 250, 228]
       ZOrder		      6
       Gain		      "K_pd"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1598,16 +1566,16 @@ Model {
       BlockType		      SubSystem
       Name		      "Kalman filter"
       SID		      "68"
-      Ports		      [2, 10]
-      Position		      [260, 311, 395, 474]
+      Ports		      [2, 5]
+      Position		      [415, 286, 500, 354]
       ZOrder		      -21
       BlockMirror	      on
       RequestExecContextInheritance off
       Variant		      off
       System {
 	Name			"Kalman filter"
-	Location		[-6, 0, 1375, 885]
-	Open			off
+	Location		[-6, -6, 1375, 879]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1618,20 +1586,20 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"150"
 	Block {
 	  BlockType		  Inport
-	  Name			  "heading"
+	  Name			  "psi_meas"
 	  SID			  "69"
-	  Position		  [20, 18, 50, 32]
+	  Position		  [70, 28, 100, 42]
 	  ZOrder		  2166
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "rudder"
+	  Name			  "delta"
 	  SID			  "70"
-	  Position		  [20, 78, 50, 92]
+	  Position		  [70, 63, 100, 77]
 	  ZOrder		  2167
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1641,7 +1609,7 @@ Model {
 	  Name			  "Degrees to\nRadians"
 	  SID			  "62"
 	  Ports			  [1, 1]
-	  Position		  [130, 40, 160, 70]
+	  Position		  [160, 40, 190, 70]
 	  ZOrder		  23
 	  LibraryVersion	  "1.44"
 	  SourceBlock		  "simulink_extras/Transformations/Degrees to\nRadians"
@@ -1653,7 +1621,7 @@ Model {
 	  Name			  "Demux"
 	  SID			  "67"
 	  Ports			  [1, 5]
-	  Position		  [565, -127, 570, 17]
+	  Position		  [535, -17, 540, 127]
 	  ZOrder		  2165
 	  ShowName		  off
 	  Outputs		  "5"
@@ -1671,22 +1639,11 @@ Model {
 	  DisplayOption		  "bar"
 	}
 	Block {
-	  BlockType		  Demux
-	  Name			  "Demux2"
-	  SID			  "85"
-	  Ports			  [1, 5]
-	  Position		  [565, 28, 570, 172]
-	  ZOrder		  2182
-	  ShowName		  off
-	  Outputs		  "5"
-	  DisplayOption		  "bar"
-	}
-	Block {
 	  BlockType		  SubSystem
-	  Name			  "MATLAB Function"
+	  Name			  "Kalman filter"
 	  SID			  "77"
-	  Ports			  [2, 2]
-	  Position		  [305, 29, 420, 76]
+	  Ports			  [2, 1]
+	  Position		  [305, 29, 415, 76]
 	  ZOrder		  2174
 	  LibraryVersion	  "1.32"
 	  ErrorFcn		  "Stateflow.Translate.translate"
@@ -1696,7 +1653,7 @@ Model {
 	  SFBlockType		  "MATLAB Function"
 	  Variant		  off
 	  System {
-	    Name		    "MATLAB Function"
+	    Name		    "Kalman filter"
 	    Location		    [223, 338, 826, 833]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -1741,23 +1698,17 @@ Model {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
 	      SID		      "77::16"
-	      Tag		      "Stateflow S-Function ship_5_kalman 2"
-	      Ports		      [2, 3]
-	      Position		      [180, 100, 230, 180]
+	      Tag		      "Stateflow S-Function ship_5_kalman_release 2"
+	      Ports		      [2, 2]
+	      Position		      [180, 100, 230, 160]
 	      ZOrder		      7
 	      FunctionName	      "sf_sfun"
-	      PortCounts	      "[2 3]"
+	      PortCounts	      "[2 2]"
 	      SFunctionDeploymentMode off
 	      EnableBusSupport	      on
 	      Port {
 		PortNumber		2
 		Name			"x_est"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"P_est_diag"
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
@@ -1777,33 +1728,23 @@ Model {
 	      ZOrder		      -5
 	      IconDisplay	      "Port number"
 	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "P_est_diag"
-	      SID		      "77::20"
-	      Position		      [460, 136, 480, 154]
-	      ZOrder		      11
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
 	    Line {
-	      ZOrder		      14
+	      ZOrder		      20
 	      SrcBlock		      "psi_meas"
 	      SrcPort		      1
 	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      15
+	      ZOrder		      21
 	      SrcBlock		      "delta"
 	      SrcPort		      1
-	      Points		      [120, 0]
 	      DstBlock		      " SFunction "
 	      DstPort		      2
 	    }
 	    Line {
 	      Name		      "x_est"
-	      ZOrder		      16
+	      ZOrder		      22
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      2
@@ -1811,23 +1752,14 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      Name		      "P_est_diag"
-	      ZOrder		      17
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      3
-	      DstBlock		      "P_est_diag"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      18
+	      ZOrder		      23
 	      SrcBlock		      " Demux "
 	      SrcPort		      1
 	      DstBlock		      " Terminator "
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      19
+	      ZOrder		      24
 	      SrcBlock		      " SFunction "
 	      SrcPort		      1
 	      DstBlock		      " Demux "
@@ -1839,16 +1771,15 @@ Model {
 	  BlockType		  Memory
 	  Name			  "Memory"
 	  SID			  "96"
-	  Position		  [450, -20, 480, 10]
+	  Position		  [435, 40, 465, 70]
 	  ZOrder		  2192
-	  BlockRotation		  270
 	}
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
 	  SID			  "66"
 	  Ports			  [2, 1]
-	  Position		  [70, 28, 75, 77]
+	  Position		  [120, 18, 125, 87]
 	  ZOrder		  2164
 	  ShowName		  off
 	  Inputs		  "2"
@@ -1859,56 +1790,35 @@ Model {
 	  Name			  "Radians\nto Degrees"
 	  SID			  "63"
 	  Ports			  [1, 1]
-	  Position		  [505, -70, 535, -40]
+	  Position		  [485, 40, 515, 70]
 	  ZOrder		  24
-	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.44"
 	  SourceBlock		  "simulink_extras/Transformations/Radians\nto Degrees"
 	  SourceType		  "RadiansToDegrees"
 	  ContentPreviewEnabled	  off
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Radians\nto Degrees1"
-	  SID			  "95"
-	  Ports			  [1, 1]
-	  Position		  [505, 85, 535, 115]
-	  ZOrder		  2191
-	  NamePlacement		  "alternate"
-	  LibraryVersion	  "1.44"
-	  SourceBlock		  "simulink_extras/Transformations/Radians\nto Degrees"
-	  SourceType		  "RadiansToDegrees"
-	  ContentPreviewEnabled	  off
-	}
-	Block {
-	  BlockType		  Sqrt
-	  Name			  "Sqrt"
-	  SID			  "94"
-	  Position		  [450, 85, 480, 115]
-	  ZOrder		  2190
 	}
 	Block {
 	  BlockType		  ZeroOrderHold
 	  Name			  "Zero-Order\nHold"
 	  SID			  "61"
-	  Position		  [180, 40, 215, 70]
+	  Position		  [220, 40, 255, 70]
 	  ZOrder		  22
 	  SampleTime		  "0.1"
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "xi_w"
+	  Name			  "xi_w_est"
 	  SID			  "71"
-	  Position		  [610, -122, 640, -108]
+	  Position		  [580, -12, 610, 2]
 	  ZOrder		  2168
 	  IconDisplay		  "Port number"
 	  PortDimensions	  "1"
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "psi_w"
+	  Name			  "psi_w_est"
 	  SID			  "72"
-	  Position		  [610, -92, 640, -78]
+	  Position		  [580, 18, 610, 32]
 	  ZOrder		  2169
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1916,9 +1826,9 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "psi"
+	  Name			  "psi_est"
 	  SID			  "73"
-	  Position		  [610, -62, 640, -48]
+	  Position		  [580, 48, 610, 62]
 	  ZOrder		  2170
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -1926,9 +1836,9 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "r"
+	  Name			  "r_est"
 	  SID			  "81"
-	  Position		  [610, -32, 640, -18]
+	  Position		  [580, 78, 610, 92]
 	  ZOrder		  2178
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -1936,61 +1846,11 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "b"
+	  Name			  "b_est"
 	  SID			  "82"
-	  Position		  [610, -2, 640, 12]
+	  Position		  [580, 108, 610, 122]
 	  ZOrder		  2179
 	  Port			  "5"
-	  IconDisplay		  "Port number"
-	  PortDimensions	  "1"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "xi_w1"
-	  SID			  "87"
-	  Position		  [610, 33, 640, 47]
-	  ZOrder		  2183
-	  Port			  "6"
-	  IconDisplay		  "Port number"
-	  PortDimensions	  "1"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "psi_w1"
-	  SID			  "88"
-	  Position		  [610, 63, 640, 77]
-	  ZOrder		  2184
-	  Port			  "7"
-	  IconDisplay		  "Port number"
-	  PortDimensions	  "1"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "psi1"
-	  SID			  "89"
-	  Position		  [610, 93, 640, 107]
-	  ZOrder		  2185
-	  Port			  "8"
-	  IconDisplay		  "Port number"
-	  PortDimensions	  "1"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "r1"
-	  SID			  "90"
-	  Position		  [610, 123, 640, 137]
-	  ZOrder		  2186
-	  Port			  "9"
-	  IconDisplay		  "Port number"
-	  PortDimensions	  "1"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "b1"
-	  SID			  "91"
-	  Position		  [610, 153, 640, 167]
-	  ZOrder		  2187
-	  Port			  "10"
 	  IconDisplay		  "Port number"
 	  PortDimensions	  "1"
 	}
@@ -2003,14 +1863,14 @@ Model {
 	}
 	Line {
 	  ZOrder		  136
-	  SrcBlock		  "heading"
+	  SrcBlock		  "psi_meas"
 	  SrcPort		  1
 	  DstBlock		  "Mux"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  137
-	  SrcBlock		  "rudder"
+	  SrcBlock		  "delta"
 	  SrcPort		  1
 	  DstBlock		  "Mux"
 	  DstPort		  2
@@ -2033,14 +1893,14 @@ Model {
 	  ZOrder		  149
 	  SrcBlock		  "Demux1"
 	  SrcPort		  1
-	  DstBlock		  "MATLAB Function"
+	  DstBlock		  "Kalman filter"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  150
 	  SrcBlock		  "Demux1"
 	  SrcPort		  2
-	  DstBlock		  "MATLAB Function"
+	  DstBlock		  "Kalman filter"
 	  DstPort		  2
 	}
 	Line {
@@ -2052,9 +1912,8 @@ Model {
 	}
 	Line {
 	  ZOrder		  157
-	  SrcBlock		  "MATLAB Function"
+	  SrcBlock		  "Kalman filter"
 	  SrcPort		  1
-	  Points		  [40, 0]
 	  DstBlock		  "Memory"
 	  DstPort		  1
 	}
@@ -2062,192 +1921,62 @@ Model {
 	  ZOrder		  159
 	  SrcBlock		  "Demux"
 	  SrcPort		  5
-	  DstBlock		  "b"
+	  DstBlock		  "b_est"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  160
 	  SrcBlock		  "Demux"
 	  SrcPort		  4
-	  DstBlock		  "r"
+	  DstBlock		  "r_est"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  161
 	  SrcBlock		  "Demux"
 	  SrcPort		  3
-	  DstBlock		  "psi"
+	  DstBlock		  "psi_est"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  162
 	  SrcBlock		  "Demux"
 	  SrcPort		  2
-	  DstBlock		  "psi_w"
+	  DstBlock		  "psi_w_est"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  163
 	  SrcBlock		  "Demux"
 	  SrcPort		  1
-	  DstBlock		  "xi_w"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  177
-	  SrcBlock		  "MATLAB Function"
-	  SrcPort		  2
-	  Points		  [9, 0; 0, 35]
-	  DstBlock		  "Sqrt"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  166
-	  SrcBlock		  "Demux2"
-	  SrcPort		  5
-	  DstBlock		  "b1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  167
-	  SrcBlock		  "Demux2"
-	  SrcPort		  4
-	  DstBlock		  "r1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  168
-	  SrcBlock		  "Demux2"
-	  SrcPort		  3
-	  DstBlock		  "psi1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  169
-	  SrcBlock		  "Demux2"
-	  SrcPort		  2
-	  DstBlock		  "psi_w1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  170
-	  SrcBlock		  "Demux2"
-	  SrcPort		  1
-	  DstBlock		  "xi_w1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  178
-	  SrcBlock		  "Sqrt"
-	  SrcPort		  1
-	  DstBlock		  "Radians\nto Degrees1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  179
-	  SrcBlock		  "Radians\nto Degrees1"
-	  SrcPort		  1
-	  DstBlock		  "Demux2"
+	  DstBlock		  "xi_w_est"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  180
 	  SrcBlock		  "Memory"
 	  SrcPort		  1
-	  Points		  [0, -30; -2, 0]
 	  DstBlock		  "Radians\nto Degrees"
 	  DstPort		  1
 	}
       }
     }
     Block {
-      BlockType		      Reference
-      Name		      "North-East"
-      SID		      "29"
-      Ports		      [2]
-      Position		      [680, 198, 710, 242]
-      ZOrder		      -2
-      LibraryVersion	      "1.358"
-      SourceBlock	      "simulink/Sinks/XY Graph"
-      SourceType	      "XY scope."
-      ContentPreviewEnabled   off
-      xmin		      "-5000"
-      xmax		      "5000"
-      ymin		      "-5000"
-      ymax		      "5000"
-      st		      "-1"
-    }
-    Block {
       BlockType		      Saturate
       Name		      "Rudder saturation"
       SID		      "40"
       Ports		      [1, 1]
-      Position		      [455, 195, 485, 225]
+      Position		      [440, 195, 470, 225]
       ZOrder		      10
       InputPortMap	      "u0"
       UpperLimit	      "45"
       LowerLimit	      "-45"
     }
     Block {
-      BlockType		      Scope
-      Name		      "Scope"
-      SID		      "30"
-      Ports		      [1]
-      Position		      [775, 134, 805, 166]
-      ZOrder		      -3
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLoggingSaveFormat','StructureWithTime','DataLoggingLimitDataPoints',true,'Data"
-      "LoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'Serial"
-      "izedDisplays',{struct('MinYLimReal','23.57409','MaxYLimReal','33.36209','YLabelReal','','MinYLimMag','23.57409',"
-      "'MaxYLimMag','33.36209','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0"
-      " 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667"
-      ";0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608"
-      " 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098039"
-      "2156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNa"
-      "mes',{{'Cargo ship/1'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','23.57"
-      "409','MaxYLimReal','33.36209','YLabelReal','','MinYLimMag','23.57409','MaxYLimMag','33.36209','LegendVisibility'"
-      ",'off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6"
-      "86274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 "
-      "0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27"
-      "4509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePro"
-      "pertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement'"
-      ",1)),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY'),extmgr.Configuration('Tools',"
-      "'Measurements',true,'Version','2015b')),'Version','2015b','Location',[163.5 500.5 1341 884])"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope1"
-      SID		      "84"
-      Ports		      [5]
-      Position		      [-110, 296, -55, 464]
-      ZOrder		      2167
-      BlockMirror	      on
-      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
-      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
-      "',true,'SerializedDisplays',{struct('MinYLimReal','-49.7476','MaxYLimReal','55.52751','YLabelReal','','MinYLimMa"
-      "g','0.00000','MaxYLimMag','55.52751','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
-      "esColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066"
-      "6666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83"
-      "1372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980392156"
-      "86 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLin"
-      "es',5,'LineNames',{{'Kalman filter/3','Kalman filter/8','Rudder saturation','Kalman filter/5','Cargo ship/1'}},'"
-      "ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-49.7476','MaxYLimReal','55.52"
-      "751','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','55.52751','LegendVisibility','off','XGrid',true,'YGrid"
-      "',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509"
-      "803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.06666666"
-      "66666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.05882352"
-      "94117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'Once"
-      "AtStop',false,'PreviousZoomMode','ZoomX','PreviousAutoscale','X'),extmgr.Configuration('Tools','Measurements',tr"
-      "ue,'Version','2015b')),'Version','2015b','Position',[2 389 906 420])"
-      NumInputPorts	      "5"
-    }
-    Block {
       BlockType		      Step
       Name		      "Step"
       SID		      "34"
-      Position		      [-25, 195, 5, 225]
+      Position		      [75, 195, 105, 225]
       ZOrder		      4
       Time		      "0"
       After		      "30"
@@ -2258,7 +1987,7 @@ Model {
       Name		      "Sum"
       SID		      "35"
       Ports		      [2, 1]
-      Position		      [90, 200, 110, 220]
+      Position		      [155, 200, 175, 220]
       ZOrder		      5
       ShowName		      off
       IconShape		      "round"
@@ -2281,83 +2010,12 @@ Model {
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace"
-      SID		      "33"
-      Ports		      [1]
-      Position		      [760, 65, 820, 95]
-      ZOrder		      3
-      VariableName	      "phi_out"
-      MaxDataPoints	      "inf"
-      Decimation	      "3"
-      SaveFormat	      "Timeseries"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace1"
-      SID		      "38"
-      Ports		      [1]
-      Position		      [90, 65, 150, 95]
-      ZOrder		      8
-      VariableName	      "phi_r_out"
-      MaxDataPoints	      "inf"
-      Decimation	      "3"
-      SaveFormat	      "Timeseries"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace2"
-      SID		      "39"
-      Ports		      [1]
-      Position		      [540, 65, 600, 95]
-      ZOrder		      9
-      VariableName	      "delta_out"
-      MaxDataPoints	      "inf"
-      Decimation	      "3"
-      SaveFormat	      "Timeseries"
-      Save2DSignal	      "3-D array (concatenate along third dimension)"
-      FixptAsFi		      on
-      SampleTime	      "-1"
-    }
-    Line {
-      ZOrder		      1
-      SrcBlock		      "Cargo ship"
-      SrcPort		      3
-      Points		      [0, 10]
-      DstBlock		      "North-East"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      2
-      SrcBlock		      "Cargo ship"
-      SrcPort		      2
-      Points		      [0, 5]
-      DstBlock		      "North-East"
-      DstPort		      1
-    }
     Line {
       ZOrder		      11
       SrcBlock		      "Step"
       SrcPort		      1
-      Points		      [53, 0]
-      Branch {
-	ZOrder			20
-	Points			[0, -130]
-	DstBlock		"To Workspace1"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			19
-	DstBlock		"Sum"
-	DstPort			1
-      }
+      DstBlock		      "Sum"
+      DstPort		      1
     }
     Line {
       ZOrder		      18
@@ -2370,22 +2028,15 @@ Model {
       ZOrder		      23
       SrcBlock		      "Rudder saturation"
       SrcPort		      1
-      Points		      [33, 0]
+      Points		      [48, 0]
       Branch {
-	ZOrder			136
-	Points			[0, 225]
+	ZOrder			220
+	Points			[0, 130]
 	DstBlock		"Kalman filter"
 	DstPort			2
       }
       Branch {
-	ZOrder			22
-	Points			[0, -130]
-	DstBlock		"To Workspace2"
-	DstPort			1
-      }
-      Branch {
 	ZOrder			21
-	Points			[2, 0]
 	DstBlock		"Cargo ship"
 	DstPort			1
       }
@@ -2396,14 +2047,6 @@ Model {
       SrcPort		      1
       DstBlock		      "1/T_f s1"
       DstPort		      1
-    }
-    Line {
-      ZOrder		      164
-      SrcBlock		      "Kalman filter"
-      SrcPort		      3
-      Points		      [-155, 0]
-      DstBlock		      "Sum"
-      DstPort		      2
     }
     Line {
       ZOrder		      179
@@ -2420,39 +2063,29 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      3
-      SrcBlock		      "Cargo ship"
-      SrcPort		      1
-      Points		      [100, 0]
-      Branch {
-	ZOrder			15
-	Points			[0, -40]
-	Branch {
-	  ZOrder		  6
-	  Points		  [0, -70]
-	  DstBlock		  "To Workspace"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  5
-	  DstBlock		  "Scope"
-	  DstPort		  1
-	}
-      }
-      Branch {
-	ZOrder			14
-	Points			[0, 120; -340, 0]
-	DstBlock		"Kalman filter"
-	DstPort			1
-      }
-    }
-    Line {
       ZOrder		      188
       SrcBlock		      "Kalman filter"
       SrcPort		      5
-      Points		      [-39, 0; 0, -132; 159, 0]
+      Points		      [-35, 0]
       DstBlock		      "Sum1"
       DstPort		      2
+    }
+    Line {
+      ZOrder		      221
+      SrcBlock		      "Cargo ship"
+      SrcPort		      1
+      Points		      [18, 0; 0, 125; -123, 0]
+      Branch {
+	ZOrder			223
+	Points			[0, 83; -385, 0]
+	DstBlock		"Sum"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			222
+	DstBlock		"Kalman filter"
+	DstPort			1
+      }
     }
   }
 }
@@ -2464,23 +2097,26 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "ship_5_kalman"
+    name		    "ship_5_kalman_release"
     created		    "17-Nov-2016 16:52:02"
     isLibrary		    0
-    firstTarget		    11
+    firstTarget		    10
     sfVersion		    80000006
   }
   chart {
     id			    2
-    name		    "Kalman filter/MATLAB Function"
+    name		    "Kalman filter/Kalman filter"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
-    firstTransition	    9
-    firstJunction	    8
+    firstTransition	    8
+    firstJunction	    7
     viewObj		    2
+    visible		    1
     machine		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -2505,16 +2141,16 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [ x_est, P_est_diag ] = kalman_m( psi_meas, delta )\n%KALMAN_M Kalman filter\n%   Detail"
-      "ed explanation goes here\nAd = [0.996954741048002,0.0992545087604663,0,0,0;-0.0607430933636516,0.984111959963574"
-      ",0,0,0;0,0,1,0.0999422352218680,-1.00626243505991e-05;0,0,0,0.998844926931510,-0.000201213728530954;0,0,0,0,1];\n"
-      "Bd = [0;0;1.006262435059909e-05;2.012137285309542e-04;0];\nCd = [0,1,1,0,0];\nEd = [2.487983938514842e-05,0;4.96"
-      "2725438023313e-04,0;0,-3.354531141537223e-07;0,-1.006262435059910e-05;0,0.100000000000000];\nR = 6.0923000000000"
-      "00e-07;\nQ = [30 0; 0 1e-6];\npersistent x_est_pre P_est_pre init_flag\nif isempty(init_flag)\n    init_flag = 1"
-      ";\n    x_est_pre = [0;0;0;0;0];\n    P_est_pre = diag([1 0.013 pi^2 1 2.5e-4]);\nend\n\nK = P_est_pre*transpose("
-      "Cd)/(Cd*P_est_pre*transpose(Cd) + R);\nx_est = x_est_pre + K * (psi_meas - Cd*x_est_pre);\nx_est_pre = Ad*x_est "
-      "+ Bd*delta;\nP_est = (eye(5)-K*Cd)*P_est_pre*transpose(eye(5)-K*Cd) + K*R*transpose(K);\nP_est_pre = Ad*P_est*tr"
-      "anspose(Ad) + Ed*Q*transpose(Ed);\nP_est_diag = diag(P_est)"
+      script		      "function x_est  = kalman_m( psi_meas, delta )\n%KALMAN_M Kalman filter\n%   Detailed explanation "
+      "goes here\nAd = [0.996954741048002,0.0992545087604663,0,0,0;-0.0607430933636516,0.984111959963574,0,0,0;0,0,1,0."
+      "0999422352218680,-1.00626243505991e-05;0,0,0,0.998844926931510,-0.000201213728530954;0,0,0,0,1];\nBd = [0;0;1.00"
+      "6262435059909e-05;2.012137285309542e-04;0];\nCd = [0,1,1,0,0];\nEd = [2.487983938514842e-05,0;4.962725438023313e"
+      "-04,0;0,-3.354531141537223e-07;0,-1.006262435059910e-05;0,0.100000000000000];\nR = 6.092300000000000e-07;\nQ = ["
+      "30 0; 0 1e-6];\npersistent x_est_pre P_est_pre init_flag\nif isempty(init_flag)\n    init_flag = 1;\n    x_est_p"
+      "re = [0;0;0;0;0];\n    P_est_pre = diag([1 0.013 pi^2 1 2.5e-4]);\nend\n\nK = P_est_pre*transpose(Cd)/(Cd*P_est_"
+      "pre*transpose(Cd) + R);\nx_est = x_est_pre + K * (psi_meas - Cd*x_est_pre);\nx_est_pre = Ad*x_est + Bd*delta;\nP"
+      "_est = (eye(5)-K*Cd)*P_est_pre*transpose(eye(5)-K*Cd) + K*R*transpose(K);\nP_est_pre = Ad*P_est*transpose(Ad) + "
+      "Ed*Q*transpose(Ed);"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -2561,7 +2197,7 @@ Stateflow {
     id			    6
     ssIdNumber		    6
     name		    "delta"
-    linkNode		    [2 5 7]
+    linkNode		    [2 5 0]
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -2579,30 +2215,8 @@ Stateflow {
     }
     dataType		    "Inherit: Same as Simulink"
   }
-  data {
-    id			    7
-    ssIdNumber		    7
-    name		    "P_est_diag"
-    linkNode		    [2 6 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
   junction {
-    id			    8
+    id			    7
     position		    [23.5747 49.5747 7]
     chart		    2
     linkNode		    [2 0 0]
@@ -2611,7 +2225,7 @@ Stateflow {
     type		    CONNECTIVE_JUNCTION
   }
   transition {
-    id			    9
+    id			    8
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -2619,7 +2233,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      8
+      id		      7
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -2635,13 +2249,13 @@ Stateflow {
     ssIdNumber		    2
   }
   instance {
-    id			    10
-    name		    "Kalman filter/MATLAB Function"
+    id			    9
+    name		    "Kalman filter/Kalman filter"
     machine		    1
     chart		    2
   }
   target {
-    id			    11
+    id			    10
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
